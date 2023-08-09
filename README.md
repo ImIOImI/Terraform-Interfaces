@@ -1,11 +1,10 @@
 # Terraform Interfaces
-In software engineering we have a major problem where we can have two _things_ that are related, and need to 
-pass information back and forth, but we don't want to couple them together. We have solved this by creating interfaces 
-between the two _things_ that allow them to communicate without knowing about each other. This is the same concept. We 
-have two _things_, for example, resources for the kubernetes control plane, node pools, and helm provisioning charts 
-(let's use datadog, external dns, and istio as examples of some helm charts that you might want to capture in IAC). 
-In this example, we have node pools that need to know about the k8s cluster and a collection of helm charts that need to 
-know how to connect to the k8s cluster. 
+In software engineering we have a major problem where we can have two or more _things_ that are related, and need to 
+enforce a common API between them and we don't want to strongly couple them together. We have solved this by creating 
+interfaces. In Terraform, we often have the same problem. We have two or more _things_, for example, resources for 
+the kubernetes control plane, node pools, and helm provisioning charts (let's use datadog, external dns, and istio as 
+examples of some helm charts that you might want to capture in IAC). In this example, we have node pools that need to 
+know about the k8s cluster and a collection of helm charts that need to know how to connect to the k8s cluster. 
 
 ## The Interface Approach
 We'll create a hypothetical project with the following structure
