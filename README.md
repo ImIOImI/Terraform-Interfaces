@@ -96,3 +96,8 @@ nor its outputs. This creates several benefits:
     of the parent project except the interface module. Furthermore, by adding the interface module to a project it 
     allows IDE autocomplete methods to work as intended and it ensures that the happy path is followed.  
 
+This allows you to break up monolithic patterns into a much easier to sustain and more maintainable pattern. While this 
+approach might not be especially useful for people that run Terraform locally, this approach is particularly useful 
+in conjunction with [TACOS](https://itnext.io/spice-up-your-infrastructure-as-code-with-tacos-1a9c179e0783). With the 
+interface approach we increase the complexity of deploys (by having many more environments with their own workspaces) 
+but we can pawn off that complexity to automation. The trade off, imo, is a good one for engineers. 
