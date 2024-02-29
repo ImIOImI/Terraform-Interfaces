@@ -11,10 +11,10 @@ We'll create a hypothetical project with the following structure
 
 ```terraform
 ─── terraform
-    ├── interfaces
-    │   └── k8s-control-plane
     ├── k8s
     │   ├── control-plane
+    |   |   ├── interface
+    |   |   |   └── interface.tf
     │   │   ├── main.tf
     │   │   └── outputs.tf
     │   └── node-pools
@@ -72,7 +72,7 @@ We can implement this interface module like:
 
 ```terraform
 module "k8s-control-plane" {
-  source = "../../interfaces/k8s-control-plane"
+  source = "../k8s/interfaces/k8s-control-plane"
 }
 
 locals {
